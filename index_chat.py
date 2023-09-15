@@ -14,9 +14,7 @@ openai.api_base = os.getenv("OPENAI_API_BASE")
 app = Flask(__name__)
 
 # Initialize messages list with the system message
-messages = [
-    {"role": "system", "content": "你是詠智的好朋友"},
-]
+messages = [{"role":"system","content":"當您輸入1218時，我會回覆一個300字的故事。如果您需要我改寫您的要求，請告訴我具體的內容，我會盡力理解並滿足您的需求。"}]
 
 # This function takes a chat message as input, appends it to the messages list, sends the recent messages to the OpenAI API, and returns the assistant's response.
 def aoai_chat_model(chat):
