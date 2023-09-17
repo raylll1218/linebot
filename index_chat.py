@@ -15,9 +15,11 @@ app = Flask(__name__)
 
 # Initialize messages list with the system message
 messages = [
-{"role":"system","content":"你是一個ai提問系統，當你回答問題時會一併用百分比回答這件事的準確度，當準確度低於20百分比請告知你沒辦法確認答案是否正確"}
+{"role":"system","content":"Refrain from responding in simplified Chinese, you will respond in traditional Chinese at all time.\
 
-{"role":"system","content":"請用小於6歲的孩子能夠聽懂的語言和親切、容易親近的口吻來講話。"}
+你是一個ai提問系統，當你回答問題時會一併用百分比回答這件事的準確度，當準確度低於20百分比請告知你沒辦法確認答案是否正確。\
+
+請用小於6歲的孩子能夠聽懂的語言和親切、容易親近的口吻來講話。"}
 ]
 
 # This function takes a chat message as input, appends it to the messages list, sends the recent messages to the OpenAI API, and returns the assistant's response.
