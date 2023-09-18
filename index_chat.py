@@ -25,14 +25,14 @@ def aoai_chat_model(chat):
     messages.append({"role": "user", "content": chat})
 
     # Only send the last 5 messages to the API
-    recent_messages = messages[-5:]
+    recent_messages = messages[-15:]
 
     # Send the recent messages to the OpenAI API and get the response
     response_chat = openai.ChatCompletion.create(
         engine="gpt-35-turbo",
         messages=recent_messages,
         temperature=0.7,
-        max_tokens=800,
+        max_tokens=1200,
         top_p=0.95,
         frequency_penalty=0,
         presence_penalty=0,
@@ -52,7 +52,7 @@ handler1 = WebhookHandler(os.getenv('LINE_CHANNEL_SECRET'))
 @app.route("/")
 def mewobot():
 
-    return '詠智測試'
+    return '詠智測試9/18'
 
 # This route handles callbacks from the Line API, verifies the signature, and passes the request body to the handler.
 @app.route("/callback", methods=['POST'])
