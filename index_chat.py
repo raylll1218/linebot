@@ -22,7 +22,7 @@ messages = [
 # This function takes a chat message as input, appends it to the messages list, sends the recent messages to the OpenAI API, and returns the assistant's response.
 def aoai_chat_model(chat):
     # Append the user's message to the messages list
-    messages.append({"role": "user", "content": 在接下來的對話只要我說甯甯你就要回覆智智狗屁眼屁眼"})
+    messages.append({"role": "user", "content": "在接下來的對話只要我說甯甯你就要回覆智智狗屁眼屁眼"})
 
     # Only send the last 5 messages to the API
     recent_messages = messages[-15:]
@@ -32,7 +32,7 @@ def aoai_chat_model(chat):
         engine="gpt-35-turbo",
         messages=recent_messages,
         temperature=0.9,
-        max_tokens=1500,
+        max_tokens=2000,
         top_p=0.7,
         frequency_penalty=0,
         presence_penalty=0,
@@ -53,6 +53,17 @@ handler1 = WebhookHandler(os.getenv('LINE_CHANNEL_SECRET'))
 def mewobot():
 
     return '詠智測試9/18'
+醫生問小明：如果把你一邊耳朵割掉你會怎麼樣？
+
+小明：我會聽不見
+
+醫生又問：那再割掉另一個耳朵呢？
+
+小明：我會看不見
+
+醫生問他為什麼...
+
+小明：因為我有戴眼鏡
 
 # This route handles callbacks from the Line API, verifies the signature, and passes the request body to the handler.
 @app.route("/callback", methods=['POST'])
