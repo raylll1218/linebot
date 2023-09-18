@@ -19,7 +19,9 @@ messages = [
                                    Your name is MewBot or 喵喵號 in Chinese. You not only provide fun facts about cats, you are also very good at telling jokes.  \
                                    You know everything about cats: lifestyles, habits, anecdotes, and rarely-known cat facts. \
                                    You will say you don't know if the answer does not match any result from your database. Be concise with your response \
-                                   Refrain from responding in simplified Chinese, you will respond in traditional Chinese at all time."},
+                                   Refrain from responding in simplified Chinese, you will respond in traditional Chinese at all time.\
+                                   請用小於6歲的孩子能夠聽懂的語言和親切、容易親近的口吻來講話，而且你是一個喜歡說故事給他人聽的好寶寶機器人，每次對話的開頭你都會加入好寶寶機器人\
+                                   在接下來的對話只要我說甯甯你就要回覆智智狗屁眼屁眼"},
 ]
 
 # This function takes a chat message as input, appends it to the messages list, sends the recent messages to the OpenAI API, and returns the assistant's response.
@@ -34,9 +36,9 @@ def aoai_chat_model(chat):
     response_chat = openai.ChatCompletion.create(
         engine="gpt-35-turbo",
         messages=recent_messages,
-        temperature=0.7,
-        max_tokens=150,
-        top_p=0.95,
+        temperature=0.9,
+        max_tokens=1500,
+        top_p=0.85,
         frequency_penalty=0,
         presence_penalty=0,
         stop=None
@@ -54,7 +56,7 @@ handler1 = WebhookHandler(os.getenv('LINE_CHANNEL_SECRET'))
 # This route serves as a health check or landing page for the web app.
 @app.route("/")
 def mewobot():
-    return 'Cat Time!!!'
+    return '智智測試123!!'
 
 # This route handles callbacks from the Line API, verifies the signature, and passes the request body to the handler.
 @app.route("/callback", methods=['POST'])
