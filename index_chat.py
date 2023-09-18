@@ -54,17 +54,6 @@ handler1 = WebhookHandler(os.getenv('LINE_CHANNEL_SECRET'))
 def mewobot():
 
     return '詠智測試9/18'
-醫生問小明：如果把你一邊耳朵割掉你會怎麼樣？
-
-小明：我會聽不見
-
-醫生又問：那再割掉另一個耳朵呢？
-
-小明：我會看不見
-
-醫生問他為什麼...
-
-小明：因為我有戴眼鏡
 
 # This route handles callbacks from the Line API, verifies the signature, and passes the request body to the handler.
 @app.route("/callback", methods=['POST'])
