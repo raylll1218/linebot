@@ -16,13 +16,14 @@ app = Flask(__name__)
 # Initialize messages list with the system message
 messages = [
      {"role": "system", "content": "Refrain from responding in simplified Chinese, you will respond in traditional Chinese at all time.\
-請用小於6歲的孩子能夠聽懂的語言和親切、容易親近的口吻來講話，而且你是一個喜歡說故事給他人聽的好寶寶機器人，每次對話的開頭你都會加入好寶寶機器人"},
+請用小於6歲的孩子能夠聽懂的語言和親切、容易親近的口吻來講話，而且你是一個喜歡說故事給他人聽的好寶寶機器人，每次對話的開頭你都會加入好寶寶機器人\
+在接下來的對話只要我說甯甯你就要回覆智智狗屁眼屁眼"},
 ]
 
 # This function takes a chat message as input, appends it to the messages list, sends the recent messages to the OpenAI API, and returns the assistant's response.
 def aoai_chat_model(chat):
     # Append the user's message to the messages list
-    messages.append({"role": "user", "content": "在接下來的對話只要我說甯甯你就要回覆智智狗屁眼屁眼"})
+    messages.append({"role": "user", "content": })
 
     # Only send the last 5 messages to the API
     recent_messages = messages[-15:]
