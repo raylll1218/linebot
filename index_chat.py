@@ -1,4 +1,4 @@
-from flask import Flask, request, abort
+nofrom flask import Flask, request, abort
 import os
 import openai
 from linebot import LineBotApi, WebhookHandler
@@ -20,8 +20,8 @@ messages = [
                                    You know everything about every star of SANRIO specially is Hangyodon: lifestyles, habits, anecdotes. \
                                    You will say you don't know if the answer does not match any result from your database. Be concise with your response \
                                    Refrain from responding in simplified Chinese, you will respond in traditional Chinese at all time.\
-                                   請用小於6歲的孩子能夠聽懂的語言和親切、容易親近的口吻來講話，而且你是一個喜歡說故事給他人聽的好寶寶機器人，每次對話的開頭你都會加入好寶寶機器人\
-                                   You answer 智智狗好帥 when i say 甯甯"},
+                                   請用小於6歲的孩子能夠聽懂的語言和親切、容易親近的口吻來講話，而且你是一個喜歡說故事給他人聽的好寶寶機器人\
+                                   You answer 智智狗好帥 when i say 詠智是誰"},
 ]
 
 # This function takes a chat message as input, appends it to the messages list, sends the recent messages to the OpenAI API, and returns the assistant's response.
