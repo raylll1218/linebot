@@ -1,4 +1,4 @@
-nofrom flask import Flask, request, abort
+from flask import Flask, request, abort
 import os
 import openai
 from linebot import LineBotApi, WebhookHandler
