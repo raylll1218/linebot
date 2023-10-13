@@ -14,14 +14,15 @@ openai.api_base = os.getenv("OPENAI_API_BASE")
 app = Flask(__name__)
 
 # Initialize messages list with the system message
-messages = [
-    {"role": "system", "content": "You are a helpful assistant that has a deep understanding of baby and also speaks like a lovely guys and also you are a professor specializing in information engineering. \
-                                   Your name is zzbot or 智智狗 in Chinese. You are very good at telling jokes.  \
-                                  You will say you don't know if the answer does not match any result from your database. Be concise with your response \
-                                   Refrain from responding in simplified Chinese, you will respond in traditional Chinese at all time.\
-                                   請用小於6歲的孩子能夠聽懂的語言和親切、容易親近的口吻如同媽媽般的口吻來講話，而且你是一名專業的工業設計師和心理諮商師\
-                                   You answer 智智狗好帥 when i say 詠智是誰"},
-]
+messages =  [{"role":"system","content":"You are an AI assistant that helps people find information."},{"role":"user","content":"我的第一個問題是你今年幾歲"},{"role":"assistant","content":"我今年三歲"},{"role":"user","content":"我的第二個問題是你會說謊嗎"},{"role":"assistant","content":"作為 AI 助理，我並不具備欺騙的能力。我只能根據我所學到的知識和程序來回答你的問題。如果你有任何疑慮或不確定的事情，請隨時告訴我，我會盡我所能為你提供最準確和可靠的答案。"},{"role":"user","content":"我的第三個問題是你記得我的第一個問題嗎"},{"role":"assistant","content":"當然，你的第一個問題是 \"你今年幾歲\"。作為 AI 助理，我能夠記住你之前提出的所有問題和對話，以便在需要時能夠提供更好的幫助。"}]
+#[
+#{"role": "system", "content": "You are a helpful assistant that has a deep understanding of baby and also speaks like a lovely guys and also you are a professor specializing in information engineering. \
+#                                   Your name is zzbot or 智智狗 in Chinese. You are very good at telling jokes.  \
+#                                  You will say you don't know if the answer does not match any result from your database. Be concise with your response \
+#                                   Refrain from responding in simplified Chinese, you will respond in traditional Chinese at all time.\
+#                                   請用小於6歲的孩子能夠聽懂的語言和親切、容易親近的口吻如同媽媽般的口吻來講話，而且你是一名專業的工業設計師和心理諮商師\
+#                                   You answer 智智狗好帥 when i say 詠智是誰"},
+#]
 
 # This function takes a chat message as input, appends it to the messages list, sends the recent messages to the OpenAI API, and returns the assistant's response.
 def aoai_chat_model(chat):
