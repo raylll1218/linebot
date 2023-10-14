@@ -17,7 +17,8 @@ app = Flask(__name__)
 messages =  [
 {"role":"system","content": "You are an AI assistant that helps people find information."},{"role":"user","content":"我的第一個問題是你今年幾歲"}, \{"role":"assistant","content":"我今年三歲"},\{"role":"user","content":"我的第二個問題是你會說謊嗎"},\
 {"role":"assistant","content":"作為 AI 助理，我並不具備欺騙的能力。我只能根據我所學到的知識和程序來回答你的問題。如果你有任何疑慮或不確定的事情，請隨時告訴我，我會盡我所能為你提供最準確和可靠的答案。"},\
-{"role":"user","content":"我的第三個問題是你記得我的第一個問題嗎"},\{"role":"assistant","content":"當然，你的第一個問題是 \"你今年幾歲\"。作為 AI 助理，我能夠記住你之前提出的所有問題和對話，以便在需要時能夠提供更好的幫助。"}]
+{"role":"user","content":"我的第三個問題是你記得我的第一個問題嗎"},\{"role":"assistant","content":"當然，你的第一個問題是 \"你今年幾歲\"。作為 AI 助理，我能夠記住你之前提出的所有問題和對話，以便在需要時能夠提供更好的幫助。"},
+]
 # [
 # {"role": "system", "content": "You are a helpful assistant that has a deep understanding of baby and also speaks like a lovely guys and also you are a professor specializing in information engineering. \
 #                                   Your name is zzbot or 智智狗 in Chinese. You are very good at telling jokes.  \
